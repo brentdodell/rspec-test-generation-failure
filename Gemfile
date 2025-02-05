@@ -50,7 +50,7 @@ group :development, :test do
   gem "brakeman", require: false
 
   # Gems for test suite
-  gem 'rspec-rails', '~> 7.1'
+  gem "rspec-rails", github: "rspec/rspec-rails", ref: "1965116ceb6cf6cacafb2aea61ebfa50e0a08d58"
   gem "factory_bot_rails", github: "jeromedalbert/factory_bot_rails", ref: "aa219dc99a23a4699a5691e98ec33fa8e11f1928"
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
