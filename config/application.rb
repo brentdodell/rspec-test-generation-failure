@@ -20,6 +20,7 @@ Bundler.require(*Rails.groups)
 
 module SixTenCollective
   class Application < Rails::Application
+    FACTORY_BOT_FACTORY_DIRECTORY = "spec/factories"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
 
@@ -36,7 +37,14 @@ module SixTenCollective
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+    config.factory_bot.definition_file_paths = [FACTORY_BOT_FACTORY_DIRECTORY]
+
+    config.generators do |g|
+      # Don't generate system test files.
+      g.system_tests = nil
+
+      # Configure FactoryBot
+      g.factory_bot dir: FACTORY_BOT_FACTORY_DIRECTORY, suffix: "factory"
+    end
   end
 end
