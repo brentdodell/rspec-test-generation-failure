@@ -37,7 +37,7 @@ module SixTenCollective
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.factory_bot.definition_file_paths = [FACTORY_BOT_FACTORY_DIRECTORY]
+    config.factory_bot.definition_file_paths = [ FACTORY_BOT_FACTORY_DIRECTORY ]
 
     config.generators do |g|
       # Don't generate system test files.
